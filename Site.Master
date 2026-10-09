@@ -1,0 +1,190 @@
+﻿
+<%@ Master Language="C#" AutoEventWireup="true"
+    CodeBehind="Site.Master.cs"
+    Inherits="WebForm.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1" />
+
+    <title>Student Portal</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f3f6fb;
+            color: #243047;
+        }
+
+        .navbar {
+            background-color: #17365d;
+            color: white;
+            padding: 20px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .brand {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .nav-links a:hover {
+            color: #93c5fd;
+        }
+
+        .container {
+            max-width: 1100px;
+            min-height: 70vh;
+            margin: 35px auto;
+            padding: 0 22px;
+        }
+
+        .hero {
+            background-color: white;
+            padding: 40px;
+            border-radius: 14px;
+            box-shadow: 0 4px 18px #17255412;
+        }
+
+        .hero h1 {
+            color: #17365d;
+            margin-top: 0;
+        }
+
+        .hero p {
+            line-height: 1.8;
+            color: #526078;
+        }
+
+        .card {
+            background-color: white;
+            padding: 25px;
+            margin-top: 22px;
+            border-radius: 12px;
+            box-shadow: 0 4px 18px #17255412;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #2563eb;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 7px;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        .button:hover {
+            background-color: #1d4ed8;
+        }
+
+        .footer {
+            background-color: #17365d;
+            color: white;
+            text-align: center;
+            padding: 22px;
+        }
+
+        @media (max-width: 600px) {
+            .navbar {
+                padding: 18px 5%;
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
+
+            .hero {
+                padding: 24px;
+            }
+        }
+    </style>
+
+    <asp:ContentPlaceHolder ID="HeadContent"
+        runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+
+        <header class="navbar">
+
+            <asp:HyperLink ID="lnkBrand"
+                runat="server"
+                NavigateUrl="~/Default.aspx"
+                CssClass="brand"
+                Text="Student Portal" />
+
+            <nav class="nav-links">
+
+                <asp:HyperLink ID="lnkHome"
+                    runat="server"
+                    NavigateUrl="~/Default.aspx"
+                    Text="Home" />
+
+                <asp:HyperLink ID="lnkAbout"
+                    runat="server"
+                    NavigateUrl="~/About.aspx"
+                    Text="About" />
+
+                <asp:HyperLink ID="lnkStudents"
+                    runat="server"
+                    NavigateUrl="~/Students.aspx"
+                    Text="Students" />
+
+                <asp:HyperLink ID="lnkContact"
+                    runat="server"
+                    NavigateUrl="~/Contact.aspx"
+                    Text="Contact" />
+
+                <asp:HyperLink ID="lnkLogin"
+                    runat="server"
+                    NavigateUrl="~/Login.aspx"
+                    Text="Login" />
+
+            </nav>
+        </header>
+
+        <main class="container">
+
+            <asp:ContentPlaceHolder ID="MainContent"
+                runat="server">
+            </asp:ContentPlaceHolder>
+
+        </main>
+
+        <footer class="footer">
+            &copy; 2026 Student Portal |
+            All rights reserved
+        </footer>
+
+    </form>
+</body>
+</html>
